@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link 
+    rel="icon" 
+    type="image/png" 
+    href="https://res.cloudinary.com/hevo/image/upload/v1685407886/hevo-website/favicons/favicon-16x16_ddbf1w.png" 
+    sizes="16x16">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+        }
+        .container-fluid {
+            height: 100vh;
+        }
+        .left-panel {
+            background:#1c1132;
+            color: white;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        .right-panel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+        }
+        .logo-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .logo-grid img {
+            max-width: 80px;
+            height: auto;
+            filter: invert(1);
+        }
+        .signup-box {
+            width: 100%;
+            max-width: 400px;
+        }
+        .form-control {
+            border-radius: 8px;
+        }
+        .btn-primary {
+            background-color: #6a0dad;
+            border-color: #6a0dad;
+            border-radius: 8px;
+        }
+        .btn-primary:hover {
+            background-color: #580b92;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row h-100">
+        <!-- Left Panel -->
+        <div class="col-md-4 left-panel">
+            <h2>Build cost-effective data pipelines in minutes</h2>
+            <video class="img-fluid" autoplay muted loop>
+                <source src="/signup_svg.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <ul class="text-start" style="list-style: none; padding-left: 0;">
+                <li>✔ 150+ database & SaaS connectors</li>
+                <li>✔ Flexible schema management</li>
+                <li>✔ Robust data transformation</li>
+                <li>✔ 24/7 live expert support</li>
+            </ul>
+            <p>2000+ customers across 45+ countries trust us.</p>
+            <div class="logo-grid">
+                <img src="https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto,w_200/v1/hevo-website/customer/logo-white/84e34f51a3a5484f9621abbab4198eb0_dbytkr" alt="Logo 1">
+                <img src="https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto,w_200/v1/hevo-website/customer/logo-white/9213cfaaa9054c48b0c9e32ef10e8cb5_ch5rex" alt="Logo 2">
+                <img src="https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto,w_200/v1/hevo-website/customer/logo-white/372a0d7da9cf4f48ac918ce674be146a_tuo74l" alt="Logo 3">
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="col-md-8 right-panel">
+            <div class="signup-box ">
+                <h2>Create your account</h2>
+                <p>Start your 14-day free trial – No credit card required!</p>
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" placeholder="Full Name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Work Email</label>
+                        <input type="email" class="form-control" placeholder="Eg. name@company.com">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Choose a Password</label>
+                        <input type="password" class="form-control" placeholder="Choose a password">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Start your free trial</button>
+                </form>
+                <p class="mt-3">OR</p>
+                <button onclick="" class="btn btn-outline-dark w-100 my-2">Sign up with Google</button>
+                <p class="mt-3">Already have an account? <a href="/login.html">Login now!</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,13 +1,674 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hevo Data | ETL, Data Integration & Data Pipeline Platform</title>
+  <link 
+    rel="icon" 
+    type="image/png" 
+    href="https://res.cloudinary.com/hevo/image/upload/v1685407886/hevo-website/favicons/favicon-16x16_ddbf1w.png" 
+    sizes="16x16">
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" 
+    crossorigin="anonymous">
+
+  <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/src/style.css">
+
+</head>
+<body>
+  <div class="banner-container">
+    <div class="banner">
+        <span>Upcoming webinar on</span>
+        <b class="ml-2">“Modern Data Stack for SaaS Companies in 2025”</b>
+        <span class="separator">|</span>
+        <span>6th March</span>
+        <span class="separator">|</span>
+        <a rel="noopener" href="https://events.hevodata.com/how-saas-companies-can-build-a-scalable-analytics-stack?utm_source=marketing&utm_medium=NL&utm_campaign=email" target="_blank">
+            Register Here <span class="icon">➜</span>
+        </a>
+    </div>
+</div>
+  <nav class="navbar navbar-expand-lg navbar--main bg-white navbar-light nav-transparent" id="navbar_v2">
+    <div class="container">
+      <div class="navbar-brand-wrapper">
+        <a class="navbar-brand" href="/">
+          <svg width="120" height="42" viewBox="0 0 290 100" fill="none" xmlns="https://www.w3.org/2000/svg">
+            <path d="M59.3911 50.0903C59.3911 55.4624 55.0597 59.8173 49.7168 59.8173C44.3738 59.8173 40.0424 55.4624 40.0424 50.0903C40.0424 44.7182 44.3738 40.3633 49.7167 40.3633C55.0597 40.3633 59.3911 44.7182 59.3911 50.0903Z" fill="#1CCCC4"></path>
+            <path d="M47.3456 22.2444C45.0809 16.4548 40.6826 7.788 40.6826 7.788C39.6462 4.81203 36.3427 3.2685 33.3041 4.34048C30.2656 5.41246 28.6425 8.69401 29.6789 11.67L33.6936 27.0607L33.8361 27.5483C35.1259 31.2517 39.2369 33.1725 43.0182 31.8385C46.7996 30.5045 48.8194 26.4208 47.5296 22.7174C47.5296 22.7174 47.4178 22.429 47.3456 22.2444Z" fill="#3D7FE0"></path>
+            <path d="M52.0885 77.9359C54.3531 83.7255 58.7514 92.3923 58.7514 92.3923C59.7879 95.3683 63.0914 96.9118 66.1299 95.8399C69.1685 94.7679 70.7916 91.4863 69.7551 88.5104L65.7405 73.1196L65.598 72.6321C64.3082 68.9286 60.1972 67.0079 56.4159 68.3419C52.6345 69.6759 50.6147 73.7596 51.9045 77.463C51.9045 77.463 52.0163 77.7514 52.0885 77.9359Z" fill="#FFD101"></path>
+            <path d="M72.5159 34.1027C76.3703 29.2359 81.6362 21.0727 81.6362 21.0727C83.6813 18.6823 83.3591 15.0341 80.9164 12.9242C78.4738 10.8144 74.8358 11.0419 72.7907 13.4323L61.5415 24.6234L61.1927 24.9913C58.6477 27.9661 59.0488 32.5061 62.0885 35.1317C65.1282 37.7573 69.6555 37.4741 72.2005 34.4993C72.2005 34.4993 72.393 34.2578 72.5159 34.1027Z" fill="#2BBAE7"></path>
+            <path d="M26.9184 66.0782C23.0639 70.945 17.7981 79.1082 17.7981 79.1082C15.753 81.4987 16.0752 85.1469 18.5178 87.2567C20.9605 89.3666 24.5985 89.139 26.6436 86.7486L37.8928 75.5575L38.2415 75.1896C40.7865 72.2148 40.3855 67.6748 37.3458 65.0493C34.3061 62.4237 29.7788 62.7068 27.2338 65.6816C27.2338 65.6816 27.0413 65.9231 26.9184 66.0782Z" fill="#FF7D42"></path>
+            <path d="M74.8872 61.9485C81.0063 62.8713 90.6705 63.375 90.6705 63.375C93.7521 63.9605 96.7333 61.8558 97.3292 58.674C97.9252 55.4921 95.9102 52.4381 92.8287 51.8526L77.5648 47.653L77.0736 47.5332C73.2388 46.8046 69.5289 49.4238 68.7872 53.3834C68.0456 57.343 70.5531 61.1436 74.3879 61.8722C74.3879 61.8722 74.6922 61.9191 74.8872 61.9485Z" fill="#4ABC90"></path>
+            <path d="M24.5465 38.2326C18.4274 37.3097 8.76316 36.8061 8.76316 36.8061C5.68163 36.2206 2.70041 38.3253 2.10444 41.5071C1.50848 44.6889 3.52346 47.7429 6.60499 48.3284L21.8689 52.5281L22.3601 52.6478C26.1949 53.3764 29.9048 50.7572 30.6465 46.7976C31.3881 42.838 28.8806 39.0375 25.0458 38.3088C25.0458 38.3088 24.7415 38.262 24.5465 38.2326Z" fill="#FF5072"></path>
+            <path d="M157.858 76.8889V52.4444H133.203V76.8889H126V23H133.203V46.8889H157.858V23H164.784V76.8889H157.858Z" fill="black"></path>
+            <path d="M200.243 66.8889H206.615C206.615 69.8519 205.322 72.4444 202.736 74.6667C199.966 76.8889 196.18 78 191.378 78C185.838 78 181.405 76.1481 178.081 72.4444C174.757 68.7407 173.095 63.8333 173.095 57.7222C173.095 51.2407 174.849 46.2407 178.358 42.7222C181.682 39.0185 185.93 37.1667 191.101 37.1667C195.903 37.1667 199.782 38.6482 202.736 41.6111C205.507 44.5741 206.892 49.3889 206.892 56.0556V58.2778H179.466C179.466 62.9074 180.667 66.4259 183.068 68.8333C185.284 71.4259 188.239 72.7222 191.932 72.7222C194.703 72.7222 196.734 72.0741 198.027 70.7778C199.505 69.6667 200.243 68.3704 200.243 66.8889ZM179.743 53.5556H200.52V52.7222C200.52 50.8704 200.151 49.2037 199.412 47.7222C198.489 45.8704 197.288 44.5741 195.811 43.8333C194.333 42.9074 192.579 42.4444 190.547 42.4444C187.962 42.4444 185.745 43.3704 183.899 45.2222C182.052 47.0741 180.667 49.8519 179.743 53.5556Z" fill="black"></path>
+            <path d="M243.182 38H249.554L233.486 76.8889H227.115L211.324 38H218.25L230.716 68.5556L243.182 38Z" fill="black"></path>
+            <path d="M271.993 78C266.637 78 262.297 76.1481 258.973 72.4444C255.464 68.9259 253.709 63.9259 253.709 57.4444C253.709 50.963 255.372 45.963 258.696 42.4444C262.02 38.9259 266.453 37.1667 271.993 37.1667C277.349 37.1667 281.689 38.9259 285.014 42.4444C288.338 45.963 290 50.963 290 57.4444C290 63.7407 288.338 68.7407 285.014 72.4444C281.689 76.1481 277.349 78 271.993 78ZM271.993 72.7222C275.133 72.7222 277.811 71.3333 280.027 68.5556C282.243 65.963 283.351 62.2593 283.351 57.4444C283.351 52.4444 282.243 48.7407 280.027 46.3333C277.811 43.7407 275.133 42.4444 271.993 42.4444C268.669 42.4444 265.899 43.7407 263.682 46.3333C261.466 48.7407 260.358 52.4444 260.358 57.4444C260.358 62.2593 261.466 65.963 263.682 68.5556C265.899 71.3333 268.669 72.7222 271.993 72.7222Z" fill="black"></path>
+          </svg>
+        </a>
+      </div>
+  
+      
+      <button 
+        class="navbar-toggler collapsed" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarSupportedContent" 
+        aria-controls="navbarSupportedContent" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation">
+        <span class="hevo-web-font hevo-menu bi bi-list blockquote"></span>
+      </button>
+  
+      <div class="navbar-collapse d-lg-flex flex-lg-row flex-lg-nowrap justify-content-lg-between collapse" id="navbarSupportedContent">
+  
+        <span class="d-none d-md-inline"></span>
+        <ul class="navbar-nav my-4 my-lg-0">
+          <li class="nav-item ml-lg-1 ">
+            <a class="nav-link" href="/integrations/pipeline/" data-track-click="Integrations Click" data-track-category="Top Nav">
+              Integrations
+            </a>
+          </li>
+          <li class="nav-item ml-lg-1 ">
+            <a class="nav-link" href="/pipeline/" data-track-click="Pipeline Product Click" data-track-category="Top Nav">
+              Data Pipeline
+            </a>
+          </li>
+          <li class="nav-item ml-lg-1 ">
+            <a class="nav-link" href="/pricing/pipeline/" data-track-click="Pricing Click" data-track-category="Top Nav">
+              Pricing
+            </a>
+          </li>
+          <li class="nav-item ml-lg-1 ">
+            <a class="nav-link" href="/customers/" data-track-click="Customers Click" data-track-category="Top Nav">
+              Customers
+            </a>
+          </li>
+          <li class="nav-item dropdown ml-lg-1" data-hover-expand="" data-hover-threshold="1200px">
+            <a class="nav-link dropdown-toggle" data-track-click="Resources Click" data-track-category="Top Nav" role="button" id="resourcesDropdown" aria-haspopup="true" aria-expanded="false" href="/resources/">
+              Resources 
+              <span class="hevo-web-icon hevo-dropdown icon-dropdown"></span>
+            </a>
+            <div class="dropdown-menu mega-dropdown-menu dropdown-menu-right resources-option-dropdown" aria-labelledby="resourcesDropdown">
+              <a class="dropdown-item" href="/resources/videos/">
+                <div class="d-lg-none text-uppercase font-weight-bold">
+                  Videos
+                </div>
+                <div class="d-none d-lg-flex align-items-center">
+                  <div class="dropdown-item-image-container">
+                    <span class="hevo-web-icon hevo-video"></span>
+                  </div>
+                  <div>
+                    <div class="text-item-title">Videos</div>
+                    <div class="text-item-desc">Learn how to get started with Hevo</div>
+                  </div>
+                </div>
+              </a>
+              <a class="dropdown-item" href="https://hevodata.com/blog/">
+                <div class="d-lg-none text-uppercase font-weight-bold">
+                  Blog
+                </div>
+                <div class="d-none d-lg-flex align-items-center">
+                  <div class="dropdown-item-image-container">
+                    <span class="hevo-web-icon hevo-blog"></span>
+                  </div>
+                  <div>
+                    <div class="text-item-title">Blog</div>
+                    <div class="text-item-desc">Learn nuanced perspectives on datascape from experts</div>
+                  </div>
+                </div>
+              </a>
+              <a class="dropdown-item" href="https://hevodata.com/learn/">
+                <div class="d-lg-none text-uppercase font-weight-bold">
+                  Learning Hub
+                </div>
+                <div class="d-none d-lg-flex align-items-center">
+                  <div class="dropdown-item-image-container">
+                    <span class="hevo-web-icon hevo-learning-hub"></span>
+                  </div>
+                  <div>
+                    <div class="text-item-title">Learning Hub</div>
+                    <div class="text-item-desc">Read about our transformative ideas on all things data</div>
+                  </div>
+                </div>
+              </a>
+              <a class="dropdown-item" href="/resources/success-stories/">
+                <div class="d-lg-none text-uppercase font-weight-bold">
+                  Success Stories
+                </div>
+                <div class="d-none d-lg-flex align-items-center">
+                  <div class="dropdown-item-image-container">
+                    <span class="hevo-web-icon hevo-success"></span>
+                  </div>
+  
+                  <div>
+                    <div class="text-item-title">Success Stories</div>
+                    <div class="text-item-desc">Know how our customers use Hevo</div>
+                  </div>
+                </div>
+              </a>
+              <a class="dropdown-item" href="/resources/events/">
+                <div class="d-lg-none text-uppercase font-weight-bold">
+                  Events
+                </div>
+                <div class="d-none d-lg-flex align-items-center">
+                  <div class="dropdown-item-image-container">
+                    <span class="hevo-web-icon hevo-events"></span>
+                  </div>
+  
+                  <div>
+                    <div class="text-item-title">Events</div>
+                    <div class="text-item-desc">Explore our Webinars and Masterclasses</div>
+                  </div>
+                </div>
+              </a>
+              <a class="dropdown-item" href="/resources/resource-guides/">
+                <div class="d-lg-none text-uppercase font-weight-bold">
+                  Resource Guides
+                </div>
+                <div class="d-none d-lg-flex align-items-center">
+                  <div class="dropdown-item-image-container">
+                    <span class="hevo-web-icon hevo-resource-guides"></span>
+                  </div>
+  
+                  <div>
+                    <div class="text-item-title">Resource Guides</div>
+                    <div class="text-item-desc">Study latest technologies with Hevo exclusives</div>
+                  </div>
+                </div>
+              </a>
+              <a class="dropdown-item" href="https://api-docs.hevodata.com/">
+                <div class="d-lg-none text-uppercase font-weight-bold">
+                  API Docs
+                </div>
+                <div class="d-none d-lg-flex align-items-center">
+                  <div class="dropdown-item-image-container">
+                    <span class="hevo-web-icon hevo-api"></span>
+                  </div>
+  
+                  <div>
+                    <div class="text-item-title">API Docs</div>
+                    <div class="text-item-desc">Get programmatic access to Hevo</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </li>
+  
+          <li class="nav-item ml-lg-1">
+            <a rel="noopener" class="nav-link" href="https://docs.hevodata.com/" target="_blank" data-track-click="Documentation Click" data-track-category="Top Nav">
+              Documentation
+            </a>
+          </li>
+  
+          <li class="nav-item ml-lg-1">
+            <a href="/login.html" data-track-click="Login Now Click" data-track-category="Top Nav" data-track-label="/login/" class="nav-link">
+            Login
+            </a>
+          </li>
+        </ul>      
+        <div class="nav-item primary-cta-wrapper d-flex align-items-center gap-3">
+          <a href="/signup/?step=email" data-track-click="Start for free Click" data-track-category="Top Nav" class="btn btn-outline-primary nav-item-signup">
+              Start for free
+          </a>
+      
+          <a href="/schedule-demo/?step=email" data-track-click="Schedule a Demo Click" data-track-category="Top Nav" class="btn btn-sm btn-primary scroll-anchor">
+              Schedule a Demo
+          </a>
+      </div>      
+      </div>
+    </div>
+  </nav>
+  <section class="hero-section bg-light py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">Reliable enterprise-ready data pipelines</h1>
+                <p class="lead mb-4">Streamline your Data Integration with Speed and Precision at Scale.</p>
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control form-control-lg" placeholder="Your Work Email">
+                    <button class="btn btn-primary btn-lg">Try Hevo for Free</button>
+                </div>
+                <div class="d-flex gap-4">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <span>Transparent pricing</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <span>No credit card required</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+              <video class="img-fluid" autoplay muted loop>
+                  <source src="/mainpage_svg.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+            </div>
+        </div>
+    </div>
+</section>
+<hr/>
+ <!-- Image Section -->
+ <section class="trusted-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-5 text-center text-md-start">
+        <h2 class="fw-bold">2000+ data teams trust Hevo</h2>
+        <a href="#" class="text-primary fw-bold">Read Success Stories &gt;</a>
+      </div>
+      <div class="col-md-7">
+        <div class="row text-center">
+          <!-- Image or SVG 1 -->
+          <div class="col-6 col-md-3">
+            <img src="https://res.cloudinary.com/hevo/image/upload/v1/hevo-website/customer/logo/00eb3fbc0cf4403a8b6efb933fffb6b9_co8o4h" alt="Logo 1" class="img-fluid" />
+          </div>
+          <!-- Image or SVG 2 -->
+          <div class="col-6 col-md-3">
+            <img src="https://res.cloudinary.com/hevo/image/upload/v1/hevo-website/customer/logo/927755e645364f0bb298d06baa060285_olpk16" alt="Logo 2" class="img-fluid" />
+          </div>
+          <!-- Image or SVG 3 -->
+          <div class="col-6 col-md-3">
+            <img src="https://res.cloudinary.com/hevo/image/upload/v1/hevo-website/customer/logo/b6255d20054c46ad9e515c092abbef3a_l4rc7e" alt="Logo 3" class="img-fluid" />
+          </div>
+          <!-- Image or SVG 4 -->
+          <div class="col-6 col-md-3">
+            <img src="https://res.cloudinary.com/hevo/image/upload/v1/hevo-website/customer/logo/2eb73e09fd3c40f5893bef368624fc27_fdovvu" alt="Logo 3" class="img-fluid" />
+          </div>
+          <!-- Image or SVG 5 -->
+          <div class="col-6 col-md-3">
+            <img src="https://res.cloudinary.com/hevo/image/upload/v1/hevo-website/customer/logo/31e00f847fe04b739c900d09e1cf1f3f_u8bhdr" alt="Logo 4" class="img-fluid" />
+          </div>
+          <!-- Image or SVG 6 -->
+          <div class="col-6 col-md-3">
+            <img src="https://res.cloudinary.com/hevo/image/upload/v1/hevo-website/customer/logo/2b37289a9b87467fb4528d5029d2e8db_bsqzh8" alt="Logo 5" class="img-fluid" />
+          </div>
+          <!-- Image or SVG 7 -->
+          <div class="col-6 col-md-3">
+            <img src="https://res.cloudinary.com/hevo/image/upload/v1/hevo-website/customer/logo/adf812f6434e4aa7a8cd86a6289dea72_vfixpi" alt="Logo 5" class="img-fluid" />
+          </div>
+          <!-- Image or SVG 8 -->
+          <div class="col-6 col-md-3">
+            <img src="https://res.cloudinary.com/hevo/image/upload/v1/hevo-website/customer/logo/44973f7c87cc48bb9bc930ca6dd27a6f_tern7f" alt="Logo 5" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr/>
+<!--Replicate Data-->
+<div class="container section py-5">
+  <div class="row align-items-center">
+      <div class="col-md-6 text-content">
+          <h2>Effortlessly replicate data from hundreds of sources</h2>
+          <p>Ingest data from pre-built, battle-hardened connectors across databases, business applications, and files. Don’t see your data source? <strong>Hevo will build it in just 48 hours!</strong></p>
+          <button class="btn btn-primary">View Integrations</button>
+      </div>
+      <div class="col-md-6">
+          <div class="icons-grid">
+            <video class="img-fluid" autoplay muted loop>
+              <source src="/3_section.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!--Automate Datapipeline-->
+<section class="feature-section simplify-etl-section text-white p-5" style="background-color: #14072c;">
+  <div class="container p-4">
+    <h2 class="feature-heading-title text-white text-center p-5">
+      Automate data pipelines end to end
+    </h2>
+
+    <div class="row align-items-center text-white pt-5 mt-5 mb-5">
+      <div class="col-lg-6 ">
+        <div class="content-wrap mb-4">
+          <h3 class="title">Set up in just a few clicks</h3>
+          <p class="description">
+            No programming, no scripting, no heavy lifting. Hevo’s intuitive interface 
+            lets you connect sources and data warehouses in just a few steps.
+          </p>
+
+          <a href="/signup/?step=email" class="btn btn-primary btn-md">
+            Try Hevo for Free
+          </a>
+        </div>
+
+        <div class="content-wrap text-white mt-5 pt-5 mb-5">
+          <h3 class="title">Zero maintenance needed</h3>
+          <p class="description">
+            Automatically handle schema drifts and intelligently recover record failures. 
+            Get proactive alerts on changes. No manual intervention needed.
+          </p>
+
+          <a href="/signup/?step=email" class="btn btn-primary btn-md">
+            Try Hevo for Free
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-6 text-center">
+        <img class="top-animation img-fluid" 
+          src="https://res.cloudinary.com/hevo/image/upload/v1737708993/website-rewamp/home/simplify-part-2_n7ptbl.svg"
+          alt="Data Pipeline"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Build for data-->
+<section class="feature-section">
+  <div class="container">
+      <h2 class="feature-heading-title">
+          Built for data teams that demand more
+      </h2>
+      <div class="row g-4">
+          
+          <!-- Card 1 -->
+          <div class="col-md-6">
+              <div class="feature-card">
+                  <img src="https://res.cloudinary.com/hevo/image/upload/v1739942355/website-rewamp/home/Complete_Visibility_xzkvub.svg" alt="Complete visibility">
+                  <div class="card-heading">Complete visibility into pipeline operations</div>
+                  <div class="card-description">
+                      Observe every pulse of your pipeline in real time. Get granular visibility into system-level operations through logs.
+                  </div>
+              </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-6">
+              <div class="feature-card">
+                  <img src="https://res.cloudinary.com/hevo/image/upload/v1739942391/website-rewamp/home/High_Throughput_gbyjam.svg" alt="High throughput">
+                  <div class="card-heading">High throughput data replication at scale</div>
+                  <div class="card-description">
+                      Move billions of records with unparalleled speed and precision. Handle data spikes without a hiccup.
+                  </div>
+              </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-6">
+              <div class="feature-card">
+                  <img src="https://res.cloudinary.com/hevo/image/upload/v1739942372/website-rewamp/home/Compliance_zqrkiy.svg" alt="Compliance">
+                  <div class="card-heading">Compliance and security you can trust</div>
+                  <div class="card-description">
+                      Get top-grade security with end-to-end encryption, two-factor authentication, role-based access control, and more.
+                  </div>
+              </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-md-6">
+              <div class="feature-card">
+                  <img src="https://res.cloudinary.com/hevo/image/upload/v1739942409/website-rewamp/home/Pipeline_Management_1_jezlic.svg" alt="Pipeline Management">
+                  <div class="card-heading">Advanced pipeline management options</div>
+                  <div class="card-description">
+                      Efficiently manage pipelines with APIs, deploy with CI/CD, and seamlessly orchestrate advanced workflows.
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+</section>
+
+<hr>
+<!--Good bye bill-->
+
+<section class="feature-section tailored-pricing-section">
+  <div class="container">
+      <div class="row align-items-center">
+          
+          <!-- Left Side: Text Content -->
+          <div class="col-lg-6 left">
+              <div class="title-heading-left">
+                  Say goodbye to unexpected bill shocks
+              </div>
+              <div class="desc-heading-left">
+                  No surprises. No hidden fees. Clear, transparent, and straightforward pricing that helps predictably control your data pipeline costs.
+              </div>
+
+              <a href="/pricing/pipeline/" class="btn-link">
+                  View Pricing
+                  <span class="ms-2">&rarr;</span>
+              </a>
+          </div>
+
+          <!-- Right Side: Image -->
+          <div class="col-lg-6 right text-center">
+              <img src="https://res.cloudinary.com/hevo/image/upload/v1739442652/website-rewamp/home/unexpected-bill-shocks_fcbbnk.svg" alt="Unexpected Bill Shocks">
+          </div>
+
+      </div>
+  </div>
+</section>
+
+<!--out of box-->
+<section class="feature-section advanced-use-case-section" style="background-color: #f6f2fd;">
+  <div class="container">
+      <h2 class="feature-heading-title">
+          Power any use case out of the box
+      </h2>
+
+      <div class="use-cases-card-wrap">
+          <!-- Card 1 -->
+          <div class="use-cases-card">
+              <span class="card-header-icon">
+                  <img src="/icon1.png" alt="Database Icon">
+              </span>
+              <div class="card-title">Database replication with CDC</div>
+              <div class="card-description">Efficiently replicate high-volume databases without impacting production systems. Ingest via logs or SQL queries.</div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="use-cases-card">
+              <span class="card-header-icon">
+                  <img src="/icon2.png" alt="Business Apps Icon">
+              </span>
+              <div class="card-title">Business apps data replication</div>
+              <div class="card-description">Seamlessly load data from third-party SaaS applications without worrying about API updates or rate limits.</div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="use-cases-card">
+              <span class="card-header-icon">
+                  <img src="/icon3.png" alt="File Storage Icon">
+              </span>
+              <div class="card-title">File storage replication</div>
+              <div class="card-description">Take advantage of low-cost file storage systems. Streamline large file transfers into your data warehouse.</div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<div class="container py-5">
+  <h2 class="text-center mb-5">Join the data teams driving impact with Hevo</h2>
+  
+  <div class="testimonial-grid">
+      <!-- Postman Card -->
+      <div class="testimonial-card">
+          <img src="https://res.cloudinary.com/hevo/image/upload/v1739442246/website-rewamp/home/f7323400-151c-45f1-a035-1c9eb5dc0518_r6nocs.png" alt="Postman Logo" class="testimonial-logo">
+          <div>
+              <p class="mb-3">40+ developer hours saved per month</p>
+              <a href="#" class="case-study-link">Read Case Study &rarr;</a>
+          </div>
+      </div>
+
+      <!-- ThoughtSpot Card -->
+      <div class="testimonial-card">
+          <img src="https://res.cloudinary.com/hevo/image/upload/v1739093638/website-rewamp/home/thought-spot_1_nse26j.svg" alt="ThoughtSpot Logo" class="testimonial-logo">
+          <div>
+              <p class="mb-3">50% reduction in ELT costs. Improved data accuracy</p>
+              <a href="#" class="case-study-link">Read Case Study &rarr;</a>
+          </div>
+      </div>
+
+      <!-- Harmoney Card -->
+      <div class="testimonial-card">
+          <img src="https://res.cloudinary.com/hevo/image/upload/v1739093674/website-rewamp/home/harmoney_1_ib9bpt.svg" alt="Harmoney Logo" class="testimonial-logo">
+          <div>
+              <p class="mb-3">30% time saved for the data analytics team</p>
+              <a href="#" class="case-study-link">Read Case Study &rarr;</a>
+          </div>
+      </div>
+
+      <!-- Deliverr Card -->
+      <div class="testimonial-card">
+          <img src="https://res.cloudinary.com/hevo/image/upload/v1739094058/website-rewamp/home/deliverr_3x_hcyjsu.webp" alt="Deliverr Logo" class="testimonial-logo">
+          <div>
+              <p class="mb-3">2x faster data replication, 80+ hours saved per source</p>
+              <a href="#" class="case-study-link">Read Case Study &rarr;</a>
+          </div>
+      </div>
+
+      <!-- Favor Card with Video -->
+      <div class="testimonial-card favor-card">
+          <div class="favor-content">
+              <img src="https://res.cloudinary.com/hevo/image/upload/v1739094023/website-rewamp/home/favor-delivery_3x_sojb6p.webp" alt="Favor Logo" class="testimonial-logo">
+              <div>
+                  <p class="mb-3">Enabled faster decision making across the company</p>
+                  <a href="#" class="case-study-link">Read Case Study &rarr;</a>
+              </div>
+          </div>
+          <div class="favor-video">
+              <div class="video-thumbnail position-relative">
+                  <img src="https://res.cloudinary.com/hevo/image/upload/v1739343346/website-rewamp/home/Video_Thumbnail_gedyh3.png" alt="Video Thumbnail" class="img-fluid">
+                  <img src="https://res.cloudinary.com/hevo/image/upload/v1739350118/website-rewamp/home/play-icon_azhags.svg" alt="Play" class="play-icon">
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<section style="background-color: #f6f2fd;">
+<div class="container p-5" >
+  <div class="row justify-content-center g-4">
+      <div class="col-md-5">
+          <div class="card">
+              <h4 class="fw-bold">Trusted partners to the best in the data ecosystem</h4>
+              <div class="badge-container mt-3">
+                  <img src="https://res.cloudinary.com/hevo/image/upload/v1726724420/hevo-website/snowflake_lp/Technology-Premier_y5hadg.png" alt="Partner 1">
+                  <img src="https://res.cloudinary.com/hevo/image/upload/v1739340235/website-rewamp/home/image-1_j2j1y4.png" alt="Partner 2">
+                  <img src="https://res.cloudinary.com/hevo/image/upload/v1739340269/website-rewamp/home/image-2_z4ough.png" alt="Partner 3">
+              </div>
+          </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+            <h4 class="fw-bold">Recognized as a leader by customers</h4>
+            <div class="badge-container d-flex flex-wrap mt-3">
+                <img src="https://res.cloudinary.com/hevo/image/upload/v1739340637/website-rewamp/home/badges/ETLTools_HighestUserAdoption_Mid-Market_Adoption_1_i2yrja.png" alt="Award 1">
+                <img src="https://res.cloudinary.com/hevo/image/upload/v1739340656/website-rewamp/home/badges/image_3_bqjc0z.png" alt="Award 2">
+                <img src="https://res.cloudinary.com/hevo/image/upload/v1739340687/website-rewamp/home/badges/ETLTools_MomentumLeader_Leader_1_ze4pa5.png" alt="Award 3">
+                <img src="https://res.cloudinary.com/hevo/image/upload/v1739340708/website-rewamp/home/badges/DataExtraction_Leader_Leader_1_oc2glf.png" alt="Award 4">
+                <img src="https://res.cloudinary.com/hevo/image/upload/v1739340708/website-rewamp/home/badges/DataExtraction_Leader_Leader_1_oc2glf.png" alt="Award 5">
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!--Footer-->
+<footer class="page-footer text-white" style="background-color: #14072c;">
+  <div class="container">
+      <div class="footer-container">
+        <div class="banner">
+            <h3>Focus on insights. Leave the data pipelines to Hevo</h3>
+            <div class="input-group">
+                <input type="email" class="form-control" placeholder="Your Work Email">
+                <button class="btn schedule-btn">Schedule a Demo</button>
+            </div>
+            <div class="error-message" style="display: none;">
+              <small>Please enter your business email: name@company.com</small>
+          </div>
+        </div>
+      </div>
+      <div class="row footer-links-container text-center text-lg-left">
+        <div class="col-md-3 mb-4">
+          <h5>Product</h5>
+          <ul class="list-unstyled">
+            <li><a href="/pipeline/" class="text-white">Hevo Pipeline</a></li>
+            <li><a href="/signup/?step=email" class="text-white">Free Trial</a></li>
+            <li><a href="/pricing/pipeline/" class="text-white">Pricing</a></li>
+            <li><a href="/integrations/pipeline/" class="text-white">Integrations</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5>Resources</h5>
+          <ul class="list-unstyled">
+            <li><a href="https://hevodata.com/blog" class="text-white">Blog</a></li>
+            <li><a href="https://hevodata.com/learn/" class="text-white">Learning Hub</a></li>
+            <li><a href="https://api-docs.hevodata.com/" class="text-white">API Docs</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5>From the Blog</h5>
+          <ul class="list-unstyled">
+            <li><a href="https://hevodata.com/learn/etl/" class="text-white">What is ETL</a></li>
+            <li><a href="https://hevodata.com/learn/8-best-cloud-etl-tools/" class="text-white">Best ETL Tools</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5>About</h5>
+          <ul class="list-unstyled">
+            <li><a href="/contact/" class="text-white">Contact Us</a></li>
+            <li><a href="/careers/" class="text-white">Careers</a></li>
+            <li><a href="/privacy/" class="text-white">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row align-items-center mt-4">
+        <div class="col-md-6 text-center text-md-left">
+          <img src="https://res.cloudinary.com/hevo/image/upload/v1684394045/hevo-logos-v2/logo-horizontal/white/logo_zrn99q.svg" width="120" alt="Hevo Data">
+        </div>
+        <div class="col-md-6 text-center text-md-right">
+          <a href="https://www.youtube.com/@HevoData" class="text-white mx-2"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.linkedin.com/company/hevodata" class="text-white mx-2"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com/HevoData" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    
+      <div class="text-center mt-3">
+        <span>© Hevo Data Inc. 2025. All Rights Reserved.</span>
+        <div>
+          <a href="/privacy/" class="text-white">Privacy Policy</a> | 
+          <a href="/terms/" class="text-white">Terms of Use</a>
+        </div>
+      </div>
+  </div>
+</footer>
+  <script 
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" 
+  crossorigin="anonymous"></script>
+  <script>
+    function validateEmail() {
+      const emailInput = document.getElementById("emailInput").value;
+      const errorMessage = document.getElementById("errorMessage");
+  
+      // Regular expression to check for a business email (not generic domains like Gmail, Yahoo, etc.)
+      const businessEmailPattern = /^[a-zA-Z0-9._%+-]+@([a-zA-Z0-9-]+\.)+(com|net|org|io|tech|dev|ai|co|biz|solutions)$/;
+      
+      if (!businessEmailPattern.test(emailInput)) {
+          errorMessage.style.display = "block";
+      } else {
+          errorMessage.style.display = "none";
+          alert("Email is valid! Proceeding...");
+      }
+  }
+  
+  </script>
+</body>
 </html>

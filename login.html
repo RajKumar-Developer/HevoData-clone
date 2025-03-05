@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link 
+    rel="icon" 
+    type="image/png" 
+    href="https://res.cloudinary.com/hevo/image/upload/v1685407886/hevo-website/favicons/favicon-16x16_ddbf1w.png" 
+    sizes="16x16">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+        }
+        .container-fluid {
+            height: 100vh;
+        }
+        .left-panel {
+            background: linear-gradient(135deg, #3b065e, #1c0335);
+            color: white;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .right-panel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+        }
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .logo-grid img {
+            max-width: 100%;
+            height: auto;
+            filter: invert(1);
+        }
+        .login-box {
+            width: 100%;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row h-100">
+        <!-- Left Panel -->
+        <div class="col-md-3 left-panel d-flex flex-column justify-content-center">
+            <h2>Get efficient and cost-effective replication</h2>
+            <h1>Automated Data Pipeline</h1>
+            <p>Data-driven companies trust Hevo</p>
+            
+            <!-- Logo Grid -->
+            <div class="container">
+                <div class="row logo-grid">
+                    <div class="col"><img src="https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto,w_200/v1/hevo-website/customer/logo-white/84e34f51a3a5484f9621abbab4198eb0_dbytkr" alt="Logo 1"></div>
+                    <div class="col"><img src="https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto,w_200/v1/hevo-website/customer/logo-white/b4e6868b9bdd4883832a2647a1d58674_cezq2i" alt="Logo 2"></div>
+                    <div class="col"><img src="https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto,w_200/v1/hevo-website/customer/logo-white/970798ede48c4973b7c908d4cc1e9a7b_rwup0c" alt="Logo 3"></div>
+                    <div class="col"><img src="https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto,w_200/v1/hevo-website/customer/logo-white/b32cb4bf7f284ec39ebce8b443a0b54e_rcv7ne" alt="Logo 4"></div>
+                    <div class="col"><img src="https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto,w_200/v1/hevo-website/customer/logo-white/0b55a7bc0ec944879a1bbba99cb12b04_ymlji4" alt="Logo 5"></div>
+                    <div class="col"><img src="https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto,w_200/v1/hevo-website/customer/logo-white/ea70dc0048504a20a72878090b421025_jn9dpk" alt="Logo 6"></div>
+                    <div class="col"><img src="https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto,w_200/v1/hevo-website/customer/logo-white/69d66d477d6d43119d8f582395221de2_eco0oo" alt="Logo 1"></div>
+                    <div class="col"><img src="https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto,w_200/v1/hevo-website/customer/logo-white/b098d4d2f13f47dc8bdb6e12bf6b5a57_jusjob" alt="Logo 2"></div>
+                    <div class="col"><img src="https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto,w_200/v1/hevo-website/customer/logo-white/a36686db42474a1893900e4fbf81cc52_skhh19" alt="Logo 3"></div>
+                    <div class="col"><img src="https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto,w_200/v1/hevo-website/customer/logo-white/884e82b1f2094fe59a2506b3018c35c9_kqmklb" alt="Logo 1"></div>
+                    <div class="col"><img src="https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto,w_200/v1/hevo-website/customer/logo-white/9213cfaaa9054c48b0c9e32ef10e8cb5_ch5rex" alt="Logo 2"></div>
+                    <div class="col"><img src="https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto,w_200/v1/hevo-website/customer/logo-white/372a0d7da9cf4f48ac918ce674be146a_tuo74l" alt="Logo 3"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="col-md-9 right-panel d-flex justify-content-center align-items-center">
+            <div class="login-box text-center">
+                <h2>Log in to your account</h2>
+                <button class="btn btn-outline-dark w-100 my-3">Sign in with Google</button>
+                <p>OR</p>
+                <form>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Registered Email*</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@company.com">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Continue</button>
+                </form>
+                <p class="mt-3">Don't have an account? <a href="/signup.html">Sign up now!</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
